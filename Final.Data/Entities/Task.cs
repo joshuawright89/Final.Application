@@ -15,6 +15,6 @@ namespace Final.Data.Entities
         [Required]
         public string TaskName { get; set; }
 
-        public ICollection<Day> Days { get; set; }
+        public virtual ICollection<TasksForTheDay> Tasks { get; set; } = new List<TasksForTheDay>();
     }
 }

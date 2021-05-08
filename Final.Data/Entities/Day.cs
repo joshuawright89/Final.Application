@@ -13,10 +13,9 @@ namespace Final.Data.Entities
 
         [Key]
         public int DayId { get; set; }
+
+        public virtual ICollection<TasksForTheDay> Tasks { get; set; } = new List<TasksForTheDay>();
         
-        public ICollection<Task> Tasks { get; set; }
-        
-        [ForeignKey]
         public int FocusId { get; set; }
 
     }
