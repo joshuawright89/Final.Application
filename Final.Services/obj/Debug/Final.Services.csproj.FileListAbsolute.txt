@@ -1,0 +1,16 @@
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\bin\Debug\Final.Services.dll.config
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\bin\Debug\Final.Services.dll
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\bin\Debug\Final.Services.pdb
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\bin\Debug\EntityFramework.dll
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\bin\Debug\EntityFramework.xml
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\obj\Debug\Final.Services.csprojAssemblyReference.cache
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\obj\Debug\Final.Services.csproj.CoreCompileInputs.cache
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\obj\Debug\Final.Services.csproj.CopyComplete
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\obj\Debug\Final.Services.dll
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Services\obj\Debug\Final.Services.pdb
