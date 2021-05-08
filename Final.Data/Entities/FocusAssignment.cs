@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 
 namespace Final.Data.Entities
 {
-    public class Focus
+    public class FocusAssignment
     {
         [Key]
         public int FocusId { get; set; }
 
-        [Key]
-        [Required]
-        public string FocusName { get; set; }
+        [Key, Column(Order = 0)]
+        public string Purpose { get; set; }
 
-        [ForeignKey(nameof(DaysAssignedThisFocus))]
-        public ICollection<Day> DaysAssignedThisFocus { get; set; }
+        [ForeignKey(nameof(Day))]
+        public virtual ICollection<Day> Days { get; set; }
     }
 }

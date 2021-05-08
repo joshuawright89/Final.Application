@@ -55,10 +55,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Final.Data\Final.Data.csproj">
+      <Project>{063BEBE9-1BD1-40EB-9B37-A8EB7D116563}</Project>
+      <Name>Final.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Final.Models\Final.Models.csproj">
+      <Project>{D16E034C-91E4-4314-B9AC-19A5D4C6058E}</Project>
+      <Name>Final.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
