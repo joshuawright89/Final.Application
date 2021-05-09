@@ -49,6 +49,9 @@ namespace Final.Services
         public ToDoListItem GetToDoById(int toDoId)
         {
             var toDoEntity = _ctx.ToDos.Find(toDoId);
+            if (toDoEntity == null)
+                return null;
+
             var toDoList = new ToDoListItem
             {
                 ToDoId = toDoEntity.ToDoId,

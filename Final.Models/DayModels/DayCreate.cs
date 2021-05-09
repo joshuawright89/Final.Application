@@ -10,6 +10,10 @@ namespace Final.Models.DayModels
     public class DayCreate
     {
         [Required]
+        [Display(Name = "Today's date:")]
         public DateTime Today { get; set; }
+
+        [Display(Name = "Optional Note for today:")]
+        public string DayName { get; set; }
     }
 }

@@ -14,3 +14,6 @@ C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Models\obj\Debug\Final.Mod
 C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Models\obj\Debug\Final.Models.csproj.CopyComplete
 C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Models\obj\Debug\Final.Models.dll
 C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Models\obj\Debug\Final.Models.pdb
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Models\bin\Debug\Final.Data.dll
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Models\bin\Debug\Final.Data.pdb
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Models\bin\Debug\Final.Data.dll.config

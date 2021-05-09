@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DayModels\DayCreate.cs" />
+    <Compile Include="DayModels\DayListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToDoListItem.cs" />
     <Compile Include="ToDoModels\ToDoCreate.cs" />
@@ -63,6 +64,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Final.Data\Final.Data.csproj">
+      <Project>{063BEBE9-1BD1-40EB-9B37-A8EB7D116563}</Project>
+      <Name>Final.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
