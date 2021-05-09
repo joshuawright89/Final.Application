@@ -2,6 +2,8 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -26,14 +28,44 @@ namespace FinalMVC.Data
         {
         }
 
-        public DbSet<Day> Days { get; set; }
-        public DbSet<Final.Data.Entities.Task> Tasks { get; set; }
-        public DbSet<Focus> Focuses { get; set; }
-        public DbSet<TasksForTheDay> TaskAssignments { get; set; }
-
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Day> Days { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Conventions
+                .Remove<PluralizingTableNameConvention>();
+
+            modelBuilder
+                .Configurations
+                .Add(new IdentityUserLoginConfiguration())
+                .Add(new IdentityUserRoleConfiguration());
+        }
+
+        public DbSet<Final.Data.Entities.Task> Tasks { get; set; }
+        public DbSet<Focus> Focuses { get; set; }
+        public DbSet<TasksForTheDay> TaskAssignments { get; set; }
     }
+
+    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    {
+        public IdentityUserLoginConfiguration()
+        {
+            HasKey(IdentityUserLogin => IdentityUserLogin.UserId);
+        }
+    }
+
+    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
+    {
+        public IdentityUserRoleConfiguration()
+        {
+            HasKey(iur => iur.UserId);
+        }
+    }
+
 }

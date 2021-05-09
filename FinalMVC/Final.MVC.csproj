@@ -256,6 +256,14 @@
       <Project>{063BEBE9-1BD1-40EB-9B37-A8EB7D116563}</Project>
       <Name>Final.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Final.Models\Final.Models.csproj">
+      <Project>{d16e034c-91e4-4314-b9ac-19a5d4c6058e}</Project>
+      <Name>Final.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Final.Services\Final.Services.csproj">
+      <Project>{e18df0df-b8bb-4db0-8451-358822a117df}</Project>
+      <Name>Final.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
