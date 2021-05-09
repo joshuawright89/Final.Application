@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Final.Data.Entities
 {
-    public class Task
+    public class ToDo
     {
         [Key]
-        public int TaskId { get; set; }
+        public int ToDoId { get; set; }
 
         [Required]
-        public string TaskName { get; set; }
+        public string ToDoName { get; set; }
 
         [ForeignKey(nameof(DaysAssignedThisTask))]
         public virtual ICollection<TasksForTheDay> DaysAssignedThisTask { get; set; } = new List<TasksForTheDay>();

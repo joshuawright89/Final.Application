@@ -77,8 +77,7 @@
   <ItemGroup>
     <Compile Include="Entities\Day.cs" />
     <Compile Include="Entities\Focus.cs" />
-    <Compile Include="Entities\FocusAssignment.cs" />
-    <Compile Include="Entities\Task.cs" />
+    <Compile Include="Entities\ToDo.cs" />
     <Compile Include="Entities\TasksForTheDay.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -54,8 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DayService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaskService.cs" />
+    <Compile Include="ToDoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -63,11 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Final.Data\Final.Data.csproj">
-      <Project>{063BEBE9-1BD1-40EB-9B37-A8EB7D116563}</Project>
+      <Project>{063bebe9-1bd1-40eb-9b37-a8eb7d116563}</Project>
       <Name>Final.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Final.Models\Final.Models.csproj">
-      <Project>{D16E034C-91E4-4314-B9AC-19A5D4C6058E}</Project>
+      <Project>{d16e034c-91e4-4314-b9ac-19a5d4c6058e}</Project>
       <Name>Final.Models</Name>
     </ProjectReference>
   </ItemGroup>

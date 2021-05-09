@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Final.Models.TaskModels
 {
-    public class TaskCreate
+    public class ToDoCreate
     {
         [Required]
-        [Display(Name = "Task:")]
+        [Display(Name = "To-do:")]
         public string TaskName { get; set; }
     }
 }

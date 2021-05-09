@@ -17,8 +17,5 @@ namespace Final.Data.Entities
         [ForeignKey(nameof(TasksAssignedForToday))]
         public virtual ICollection<TasksForTheDay> TasksAssignedForToday { get; set; } = new List<TasksForTheDay>();
         
-        [ForeignKey(nameof(Focus))]
-        public int FocusId { get; set; }
-
     }
 }

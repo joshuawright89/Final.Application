@@ -47,7 +47,7 @@ namespace FinalMVC.Data
                 .Add(new IdentityUserRoleConfiguration());
         }
 
-        public DbSet<Final.Data.Entities.Task> Tasks { get; set; }
+        public DbSet<ToDo> ToDos { get; set; }
         public DbSet<Focus> Focuses { get; set; }
         public DbSet<TasksForTheDay> TaskAssignments { get; set; }
     }
