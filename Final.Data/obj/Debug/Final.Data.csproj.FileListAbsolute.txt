@@ -27,3 +27,6 @@ C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.
 C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.csproj.CopyComplete
 C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.dll
 C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.pdb
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.Migrations.InitialCreate.resources
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.csproj.GenerateResource.cache
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.Migrations.FirstAfterInitial.resources

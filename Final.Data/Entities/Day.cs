@@ -12,7 +12,7 @@ namespace Final.Data.Entities
         public DateTime Today { get; set; }
 
         [Key]
-        public int DayId { get; set; }
+        public int Id { get; set; }
 
         public string DayLabel { get; set; }
 

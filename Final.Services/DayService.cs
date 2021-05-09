@@ -43,7 +43,7 @@ namespace Final.Services
             var dayList = dayEntities.Select(d => new DayListItem
             {
                 Today = d.Today,
-                DayId = d.DayId,
+                DayId = d.Id,
                 DayLabel = d.DayLabel,
                 TasksAssignedForToday = d.ToDosAssignedForToday
             }).ToList();
@@ -62,7 +62,7 @@ namespace Final.Services
             var listItem = new DayListItem
             {
                 Today = dayEntity.Today,
-                DayId = dayEntity.DayId,
+                DayId = dayEntity.Id,
                 DayLabel = dayEntity.DayLabel,
                 TasksAssignedForToday = dayEntity.ToDosAssignedForToday
             };

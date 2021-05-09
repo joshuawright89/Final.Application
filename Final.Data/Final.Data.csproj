@@ -79,9 +79,25 @@
     <Compile Include="Entities\ToDo.cs" />
     <Compile Include="Entities\ToDosForTheDay.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202105092218089_InitialCreate.cs" />
+    <Compile Include="Migrations\202105092218089_InitialCreate.Designer.cs">
+      <DependentUpon>202105092218089_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105092315217_FirstAfterInitial.cs" />
+    <Compile Include="Migrations\202105092315217_FirstAfterInitial.Designer.cs">
+      <DependentUpon>202105092315217_FirstAfterInitial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105092218089_InitialCreate.resx">
+      <DependentUpon>202105092218089_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105092315217_FirstAfterInitial.resx">
+      <DependentUpon>202105092315217_FirstAfterInitial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace FinalMVC.Controllers
 {
-    public class DayController : Controller
+    public class DayController : Controller //"The [Day]Controller will manage views for Creating, Reading, Updating, and Deleting [Days]..."
     {
         // GET: Day
         public ActionResult Index()
