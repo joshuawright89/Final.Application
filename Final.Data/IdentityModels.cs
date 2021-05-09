@@ -33,7 +33,6 @@ namespace FinalMVC.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Day> Days { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -48,8 +47,8 @@ namespace FinalMVC.Data
         }
 
         public DbSet<ToDo> ToDos { get; set; }
-        public DbSet<Focus> Focuses { get; set; }
-        public DbSet<TasksForTheDay> TaskAssignments { get; set; }
+        public DbSet<Day> Days { get; set; }
+        public DbSet<ToDosForTheDay> TaskAssignments { get; set; }
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>

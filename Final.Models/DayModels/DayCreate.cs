@@ -14,6 +14,6 @@ namespace Final.Models.DayModels
         public DateTime Today { get; set; }
 
         [Display(Name = "Optional Note for today:")]
-        public string DayName { get; set; }
+        public string DayLabel { get; set; }
     }
 }

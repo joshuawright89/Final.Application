@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Final.Data.Entities
 {
-    public class Day
+    public class Day //cohort
     {
         [Required]
         public DateTime Today { get; set; }
@@ -14,10 +14,9 @@ namespace Final.Data.Entities
         [Key]
         public int DayId { get; set; }
 
-        public string DayName { get; set; }
+        public string DayLabel { get; set; }
 
-        [ForeignKey(nameof(TasksAssignedForToday))]
-        public virtual ICollection<TasksForTheDay> TasksAssignedForToday { get; set; } = new List<TasksForTheDay>();
+        public virtual ICollection<ToDosForTheDay> ToDosAssignedForToday { get; set; } = new List<ToDosForTheDay>();
         
     }
 }

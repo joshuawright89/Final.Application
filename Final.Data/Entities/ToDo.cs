@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 
 namespace Final.Data.Entities
 {
-    public class ToDo
+    public class ToDo  //student 
     {
         [Key]
-        public int ToDoId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string ToDoName { get; set; }
 
-        [ForeignKey(nameof(DaysAssignedThisTask))]
-        public virtual ICollection<TasksForTheDay> DaysAssignedThisTask { get; set; } = new List<TasksForTheDay>();
+        public virtual ICollection<ToDosForTheDay> DaysAssignedThisToDo { get; set; } = new List<ToDosForTheDay>();  //this will take the ToDo object's Id and cross reference it with the TaskForTheDay class in the data layer, and populate this list with the matching results.  If none are found, it will automatically initialized a new list, as opposed to just leaving a broken end in the code.
 
     }
 }

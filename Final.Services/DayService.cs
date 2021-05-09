@@ -26,7 +26,7 @@ namespace Final.Services
                 new Day()
                 {
                     Today = DateTime.Today,
-                    DayName = model.DayName
+                    DayLabel = model.DayLabel
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -44,8 +44,8 @@ namespace Final.Services
             {
                 Today = d.Today,
                 DayId = d.DayId,
-                DayName = d.DayName,
-                TasksAssignedForToday = d.TasksAssignedForToday
+                DayLabel = d.DayLabel,
+                TasksAssignedForToday = d.ToDosAssignedForToday
             }).ToList();
             return dayList;
 
@@ -53,7 +53,7 @@ namespace Final.Services
 
 
         //Get ALL days with a specific task assigned
-        public DayListItem GetDayByTask(TasksForTheDay TasksAssignedForToday)
+        public DayListItem GetDayByTask(ToDosForTheDay TasksAssignedForToday)
         {
             var dayEntity = ctx.Days.Find(TasksAssignedForToday);
             if (dayEntity == null)
@@ -63,8 +63,8 @@ namespace Final.Services
             {
                 Today = dayEntity.Today,
                 DayId = dayEntity.DayId,
-                DayName = dayEntity.DayName,
-                TasksAssignedForToday = dayEntity.TasksAssignedForToday
+                DayLabel = dayEntity.DayLabel,
+                TasksAssignedForToday = dayEntity.ToDosAssignedForToday
             };
             return listItem;
         }

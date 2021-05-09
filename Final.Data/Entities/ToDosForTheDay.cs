@@ -8,18 +8,19 @@ using System.Threading.Tasks;
 
 namespace Final.Data.Entities
 {
-    public class TasksForTheDay
+    public class ToDosForTheDay  //enrollment
     {
         [Key]
         public int Id { get; set; }
+        
+        [ForeignKey(nameof(ToDo))]
+        public int ToDoId { get; set; }
+        public virtual ToDo ToDo { get; set; }
 
         [ForeignKey(nameof(Day))]
         public int DayId { get; set; }
         public virtual Day Day { get; set; }
 
-        [ForeignKey(nameof(Task))]
-        public int TaskId { get; set; }
-        public virtual Task Task { get; set; }
 
 
     }

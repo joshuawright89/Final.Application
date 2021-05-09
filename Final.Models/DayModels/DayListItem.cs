@@ -20,10 +20,10 @@ namespace Final.Models.DayModels
         public int DayId { get; set; }
 
         [Display(Name = "Optional label for this day:")]
-        public string DayName { get; set; }
+        public string DayLabel { get; set; }
 
         [Display(Name = "Tasks assigned to this day:")]
         [ForeignKey(nameof(TasksAssignedForToday))]
-        public virtual ICollection<TasksForTheDay> TasksAssignedForToday { get; set; } = new List<TasksForTheDay>();
+        public virtual ICollection<ToDosForTheDay> TasksAssignedForToday { get; set; } = new List<ToDosForTheDay>();
     }
 }
