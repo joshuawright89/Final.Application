@@ -19,7 +19,7 @@ namespace Final.Services
 
         private readonly ApplicationDbContext ctx = new ApplicationDbContext();
 
-        //Create
+        //CREATE
         public bool CreateDay(DayCreate model)
         {
             Day entity =
@@ -35,6 +35,8 @@ namespace Final.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        //READ
 
         //Get ALL Days   I PROBABLY DO NOT NEED THIS, AS THERE IS A DAY/INDEX URL THAT WILL SHOW DAY OBJECTS... RIGHT?
         public List<DayListItem> GetAllDays()
@@ -72,6 +74,44 @@ namespace Final.Services
                         }
                         );
                 return query.ToArray();
+            }
+        }
+
+        public DayListItem GetDayById(int id)  //this is our GetDayById SERVICE method
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Days.Single(e => e.Id == id && e.OwnerId == _userId);
+                return
+                    new DayListItem
+                    {
+                        Today = entity.Today,
+                        DayLabel = entity.DayLabel,
+                        ToDosAssignedForToday = entity.ToDosAssignedForToday
+                    };
+            }
+        }
+
+
+
+        //UPDATE
+
+        public bool UpdateDay(DayEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Days
+                    .Single(e => e.Today == model.Today && e.OwnerId == model.OwnerId);
+
+                entity.Today = model.Today;
+                entity.DayLabel = model.DayLabel;
+                entity.ToDosAssignedForToday = model.ToDosAssignedForToday;
+
+                return ctx.SaveChanges() == 1;
             }
         }
 

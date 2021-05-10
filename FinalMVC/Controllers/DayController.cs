@@ -52,6 +52,48 @@ namespace FinalMVC.Controllers
             return View(model);
         }
 
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateDayService();
+            var listItem = service.GetDayById(id);
+            var model =
+                new DayEdit
+                {
+                    Today = listItem.Today,
+                    DayLabel = listItem.DayLabel,
+                    ToDosAssignedForToday = listItem.ToDosAssignedForToday
+                };
+            return View(model);
+        }
+
+
+        //EN9.02 -- "1. Back in [Day]Controller, build an overloaded Edit ActionResult under the Edit(int id) method:"
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, DayEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.Id != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateDayService();
+
+            if (service.UpdateDay(model))
+            {
+                TempData["SaveResult"] = "Your day was successfully updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your day could not be updated!");
+
+            return View();
+        }
+
+
         private DayService CreateDayService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

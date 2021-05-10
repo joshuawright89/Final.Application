@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace Final.Models.DayModels
 {
-    public class DayCreate  //This model "will allow us to have some validation for the [day] properties." (EN 5.02)
+    public class DayEdit
     {
+        public int Id { get; set; }
+
         [Required]
         [Display(Name = "Today's date:")]
         public DateTime Today { get; set; }
@@ -17,6 +19,8 @@ namespace Final.Models.DayModels
         [Display(Name = "Optional Note for today:")]
         [MaxLength(100, ErrorMessage = "Calm down, bro!  100 characters or fewer, please.")]
         public string DayLabel { get; set; }
+
+        public Guid OwnerId { get; set; }
 
         public virtual ICollection<ToDosForTheDay> ToDosAssignedForToday { get; set; } = new List<ToDosForTheDay>();
     }
