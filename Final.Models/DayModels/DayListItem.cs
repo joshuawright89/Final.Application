@@ -19,6 +19,8 @@ namespace Final.Models.DayModels
         [Display(Name = "Day Number:")]
         public int Id { get; set; }
 
+        public Guid OwnerId { get; set; }
+
         [Display(Name = "Optional label for this day:")]
         public string DayLabel { get; set; }
 

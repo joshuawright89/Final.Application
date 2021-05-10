@@ -30,3 +30,4 @@ C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.
 C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.Migrations.InitialCreate.resources
 C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.csproj.GenerateResource.cache
 C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.Migrations.FirstAfterInitial.resources
+C:\Users\joshu\Desktop\RedBadgeProject\FinalMVC\Final.Data\obj\Debug\Final.Data.Migrations.FixedErrorcs1662CanRunNow.resources

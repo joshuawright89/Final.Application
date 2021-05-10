@@ -60,7 +60,7 @@ namespace Final.Services
                 var query =
                     ctx
                     .Days
-                    .Where(e => e.OwnerId = _userId)
+                    .Where(e => e.OwnerId == _userId)
                     .Select(
                         e =>
                         new DayListItem

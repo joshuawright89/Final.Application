@@ -37,15 +37,19 @@ namespace FinalMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(DayCreate model)
         {
-            if (ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
+
             var service = CreateDayService();
 
-            service.CreateDay(model);
+            if (service.CreateDay(model))
+            {
+                TempData["SaveResult"] = "Your Day was created!";  //tempdata removes info after it's accessed (EN7.02)
+                return RedirectToAction("Index");
+            };
 
-            return RedirectToAction("Index");
+            ModelState.AddModelError("", "Day could not be created.");
+
+            return View(model);
         }
 
         private DayService CreateDayService()

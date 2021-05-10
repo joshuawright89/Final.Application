@@ -87,6 +87,10 @@
     <Compile Include="Migrations\202105092315217_FirstAfterInitial.Designer.cs">
       <DependentUpon>202105092315217_FirstAfterInitial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105100147573_FixedErrorcs1662CanRunNow.cs" />
+    <Compile Include="Migrations\202105100147573_FixedErrorcs1662CanRunNow.Designer.cs">
+      <DependentUpon>202105100147573_FixedErrorcs1662CanRunNow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105092315217_FirstAfterInitial.resx">
       <DependentUpon>202105092315217_FirstAfterInitial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105100147573_FixedErrorcs1662CanRunNow.resx">
+      <DependentUpon>202105100147573_FixedErrorcs1662CanRunNow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
