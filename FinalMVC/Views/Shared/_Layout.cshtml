@@ -23,10 +23,19 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Days", "Index", "Day")</li>
-                    <li>@Html.ActionLink("Tasks", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Focuses", "Index", "Focus")</li>
-                </ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Days", "Index", "Day")</li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Tasks", "Index", "Home")</li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Focuses", "Index", "Focus")</li>
+                    }
+                    </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
