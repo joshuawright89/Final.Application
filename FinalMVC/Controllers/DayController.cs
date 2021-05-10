@@ -52,6 +52,15 @@ namespace FinalMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateDayService();
+            var model = svc.GetDayById(id);
+
+            return View(model);
+        }
+
+
 
         public ActionResult Edit(int id)
         {
@@ -92,6 +101,31 @@ namespace FinalMVC.Controllers
 
             return View();
         }
+
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateDayService();
+            var model = svc.GetDayById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteDay(int id)
+        {
+            var service = CreateDayService();
+
+            service.DeleteDay(id);
+
+            TempData["SaveResult"] = "Your note was successfully deleted.";
+
+            return RedirectToAction("Index");
+        }
+
 
 
         private DayService CreateDayService()

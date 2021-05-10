@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DayDetails.cs" />
     <Compile Include="DayModels\DayCreate.cs" />
     <Compile Include="DayModels\DayEdit.cs" />
     <Compile Include="DayModels\DayListItem.cs" />

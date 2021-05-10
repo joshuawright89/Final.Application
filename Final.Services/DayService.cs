@@ -1,4 +1,5 @@
 ﻿using Final.Data.Entities;
+using Final.Models;
 using Final.Models.DayModels;
 using FinalMVC.Data;
 using System;
@@ -77,24 +78,26 @@ namespace Final.Services
             }
         }
 
-        public DayListItem GetDayById(int id)  //this is our GetDayById SERVICE method
+        public DayDetails GetDayById(int id)  //this is our GetDayById SERVICE method
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                    .Days.Single(e => e.Id == id && e.OwnerId == _userId);
+                    .Days.Single(e => e.Id == id);
                 return
-                    new DayListItem
+                    new DayDetails
                     {
+                        Id = entity.Id,
                         Today = entity.Today,
+                        OwnerId = entity.OwnerId,
                         DayLabel = entity.DayLabel,
                         ToDosAssignedForToday = entity.ToDosAssignedForToday
                     };
             }
         }
 
-
+        
 
         //UPDATE
 
@@ -105,7 +108,7 @@ namespace Final.Services
                 var entity =
                     ctx
                     .Days
-                    .Single(e => e.Today == model.Today && e.OwnerId == model.OwnerId);
+                    .Single(e => e.Today == model.Today);
 
                 entity.Today = model.Today;
                 entity.DayLabel = model.DayLabel;
@@ -115,6 +118,21 @@ namespace Final.Services
             }
         }
 
+        //DELETE
 
+        public bool DeleteDay(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Days
+                    .Single(e => e.Id == id);
+
+                ctx.Days.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
