@@ -11,13 +11,13 @@ namespace Final.Services
 {
     public class DayService
     {
-        private readonly ApplicationDbContext ctx = new ApplicationDbContext();
-
-        private readonly Guid _dayId;
-        public DayService(Guid dayId)
+        private readonly Guid _userId;
+        public DayService(Guid userId)
         {
-            _dayId = dayId;
+            _userId = userId;
         }
+
+        private readonly ApplicationDbContext ctx = new ApplicationDbContext();
 
         //Create
         public bool CreateDay(DayCreate model)
@@ -25,7 +25,7 @@ namespace Final.Services
             Day entity =
                 new Day()
                 {
-                    Today = DateTime.Today,
+                    Today = model.Today,
                     DayLabel = model.DayLabel
                 };
 
@@ -36,7 +36,7 @@ namespace Final.Services
             }
         }
 
-        //Get ALL Days
+        //Get ALL Days   I PROBABLY DO NOT NEED THIS, AS THERE IS A DAY/INDEX URL THAT WILL SHOW DAY OBJECTS... RIGHT?
         public List<DayListItem> GetAllDays()
         {
             var dayEntities = ctx.Days.ToList();
@@ -45,30 +45,35 @@ namespace Final.Services
                 Today = d.Today,
                 Id = d.Id,
                 DayLabel = d.DayLabel,
-                TasksAssignedForToday = d.ToDosAssignedForToday
+                ToDosAssignedForToday = d.ToDosAssignedForToday
             }).ToList();
             return dayList;
 
         }
 
 
-        //Get ALL days with a specific task assigned
-        public DayListItem GetDayByTask(ToDosForTheDay TasksAssignedForToday)
+        //Get ALL days by a specific user
+        public IEnumerable<DayListItem> GetDaysByUser()
         {
-            var dayEntity = ctx.Days.Find(TasksAssignedForToday);
-            if (dayEntity == null)
-                return null;
-
-            var listItem = new DayListItem
+            using (var ctx = new ApplicationDbContext())
             {
-                Today = dayEntity.Today,
-                Id = dayEntity.Id,
-                DayLabel = dayEntity.DayLabel,
-                TasksAssignedForToday = dayEntity.ToDosAssignedForToday
-            };
-            return listItem;
+                var query =
+                    ctx
+                    .Days
+                    .Where(e => e.OwnerId = _userId)
+                    .Select(
+                        e =>
+                        new DayListItem
+                        {
+                            Id = e.Id,
+                            Today = e.Today,
+                            DayLabel = e.DayLabel,
+                            ToDosAssignedForToday = e.ToDosAssignedForToday
+                        }
+                        );
+                return query.ToArray();
+            }
         }
-
 
 
     }

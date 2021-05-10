@@ -22,8 +22,8 @@ namespace Final.Models.DayModels
         [Display(Name = "Optional label for this day:")]
         public string DayLabel { get; set; }
 
-        [Display(Name = "Tasks assigned to this day:")]
-        [ForeignKey(nameof(TasksAssignedForToday))]
-        public virtual ICollection<ToDosForTheDay> TasksAssignedForToday { get; set; } = new List<ToDosForTheDay>();
+        [Display(Name = "ToDos assigned to this day:")]
+        [ForeignKey(nameof(ToDosAssignedForToday))]
+        public virtual ICollection<ToDosForTheDay> ToDosAssignedForToday { get; set; } = new List<ToDosForTheDay>();
     }
 }

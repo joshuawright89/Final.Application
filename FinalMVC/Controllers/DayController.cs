@@ -1,4 +1,6 @@
 ﻿using Final.Models.DayModels;
+using Final.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +15,14 @@ namespace FinalMVC.Controllers
         // GET: Day
         public ActionResult Index()
         {
-            var model = new DayListItem[0];  
-            return View();
+            //var model = new DayListItem[0];
+            //return View();                         ----------------------In EN6.02, we changed these two lines to those below:
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new DayService(userId);
+
+            var model = service.GetAllDays();
+
+            return View(model);
         }
 
         //"In the code above, we are initializing a new instance of the [Day]ListItem as an IEnumerable with the [0] syntax.  This will satisfy some of the requirements for our Index View.  When we added the List template for our view, it created some IEnumerable requirements for our list view.  More on that later." (EN. 4.04)
@@ -31,9 +39,20 @@ namespace FinalMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+            var service = CreateDayService();
+
+            service.CreateDay(model);
+
+            return RedirectToAction("Index");
+        }
+
+        private DayService CreateDayService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new DayService(userId);
+            return service;
         }
     }
 }

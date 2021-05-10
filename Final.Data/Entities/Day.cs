@@ -14,6 +14,9 @@ namespace Final.Data.Entities
         [Key]
         public int Id { get; set; }
 
+        [Required]
+        public Guid OwnerId { get; set; }
+
         public string DayLabel { get; set; }
 
         public virtual ICollection<ToDosForTheDay> ToDosAssignedForToday { get; set; } = new List<ToDosForTheDay>();
