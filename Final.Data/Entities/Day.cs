@@ -21,5 +21,8 @@ namespace Final.Data.Entities
 
         public virtual ICollection<ToDosForTheDay> ToDosAssignedForToday { get; set; } = new List<ToDosForTheDay>();
         
+        [ForeignKey(nameof(Focus))]
+        public int FocusId { get; set; }
+        public virtual Focus Focus { get; set; }
     }
 }

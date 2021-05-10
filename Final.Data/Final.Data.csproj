@@ -78,6 +78,7 @@
     <Compile Include="Entities\Day.cs" />
     <Compile Include="Entities\ToDo.cs" />
     <Compile Include="Entities\ToDosForTheDay.cs" />
+    <Compile Include="Focus.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202105092218089_InitialCreate.cs" />
     <Compile Include="Migrations\202105092218089_InitialCreate.Designer.cs">
@@ -91,6 +92,14 @@
     <Compile Include="Migrations\202105100147573_FixedErrorcs1662CanRunNow.Designer.cs">
       <DependentUpon>202105100147573_FixedErrorcs1662CanRunNow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105100337470_AddedFocusClass.cs" />
+    <Compile Include="Migrations\202105100337470_AddedFocusClass.Designer.cs">
+      <DependentUpon>202105100337470_AddedFocusClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105100341228_AddedFocusClassFix.cs" />
+    <Compile Include="Migrations\202105100341228_AddedFocusClassFix.Designer.cs">
+      <DependentUpon>202105100341228_AddedFocusClassFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,6 +112,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105100147573_FixedErrorcs1662CanRunNow.resx">
       <DependentUpon>202105100147573_FixedErrorcs1662CanRunNow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105100337470_AddedFocusClass.resx">
+      <DependentUpon>202105100337470_AddedFocusClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105100341228_AddedFocusClassFix.resx">
+      <DependentUpon>202105100341228_AddedFocusClassFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
