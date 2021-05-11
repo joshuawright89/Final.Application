@@ -27,7 +27,9 @@ namespace Final.Services
                 new Day()
                 {
                     Today = model.Today,
-                    DayLabel = model.DayLabel
+                    DayLabel = model.DayLabel,
+                    ToDosAssignedForToday = model.ToDosAssignedForToday,
+                    Focus = model.Focus
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -48,7 +50,8 @@ namespace Final.Services
                 Today = d.Today,
                 Id = d.Id,
                 DayLabel = d.DayLabel,
-                ToDosAssignedForToday = d.ToDosAssignedForToday
+                ToDosAssignedForToday = d.ToDosAssignedForToday,
+                Focus = d.Focus
             }).ToList();
             return dayList;
         }
@@ -70,7 +73,8 @@ namespace Final.Services
                             Id = e.Id,
                             Today = e.Today,
                             DayLabel = e.DayLabel,
-                            ToDosAssignedForToday = e.ToDosAssignedForToday
+                            ToDosAssignedForToday = e.ToDosAssignedForToday,
+                            Focus = e.Focus
                         }
                         );
                 return query.ToArray();
@@ -89,9 +93,9 @@ namespace Final.Services
                     {
                         Id = entity.Id,
                         Today = entity.Today,
-                        OwnerId = entity.OwnerId,
                         DayLabel = entity.DayLabel,
-                        ToDosAssignedForToday = entity.ToDosAssignedForToday
+                        ToDosAssignedForToday = entity.ToDosAssignedForToday,
+                        Focus = entity.Focus
                     };
             }
         }
@@ -112,6 +116,7 @@ namespace Final.Services
                 entity.Today = model.Today;
                 entity.DayLabel = model.DayLabel;
                 entity.ToDosAssignedForToday = model.ToDosAssignedForToday;
+                entity.Focus = model.Focus;
 
                 return ctx.SaveChanges() == 1;
             }

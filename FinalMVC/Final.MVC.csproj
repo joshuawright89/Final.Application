@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DayController.cs" />
+    <Compile Include="Controllers\FocusController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ToDoController.cs" />
@@ -237,7 +238,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Day\Index.cshtml" />
-    <Content Include="Views\Day\Create.cshtml" />
     <Content Include="Views\Day\Edit.cshtml" />
     <Content Include="Views\Day\Details.cshtml" />
     <Content Include="Views\Day\Delete.cshtml" />
@@ -247,6 +247,9 @@
     <Content Include="Views\ToDo\Edit.cshtml" />
     <Content Include="Views\ToDo\Details.cshtml" />
     <Content Include="Views\ToDo\Delete.cshtml" />
+    <Content Include="Views\Day\Create.cshtml" />
+    <Content Include="Views\Focus\Index.cshtml" />
+    <Content Include="Views\Focus\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,5 @@
-﻿using Final.Data.Entities;
+﻿using Final.Data;
+using Final.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -27,5 +28,9 @@ namespace Final.Models.DayModels
         [Display(Name = "ToDos assigned to this day:")]
         [ForeignKey(nameof(ToDosAssignedForToday))]
         public virtual ICollection<ToDosForTheDay> ToDosAssignedForToday { get; set; } = new List<ToDosForTheDay>();
+
+        [ForeignKey(nameof(Focus))]
+        public int FocusId { get; set; }
+        public virtual Focus Focus { get; set; }
     }
 }

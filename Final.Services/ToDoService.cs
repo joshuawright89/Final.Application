@@ -50,7 +50,7 @@ namespace Final.Services
         }
 
 
-        //Get (Details by Id)
+        //Get (Todo Details by Id)
         public ToDoDetails GetToDoById(int toDoId)
         {
             var toDoEntity = _ctx.ToDos.Find(toDoId);

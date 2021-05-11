@@ -47,7 +47,7 @@ namespace FinalMVC.Controllers
                 return RedirectToAction("Index");
             };
 
-            ModelState.AddModelError("", "Day could not be created.");
+            //ModelState.AddModelError("", "Day could not be created.");
 
             return View(model);
         }
@@ -71,7 +71,8 @@ namespace FinalMVC.Controllers
                 {
                     Today = listItem.Today,
                     DayLabel = listItem.DayLabel,
-                    ToDosAssignedForToday = listItem.ToDosAssignedForToday
+                    ToDosAssignedForToday = listItem.ToDosAssignedForToday,
+                    Focus = listItem.Focus
                 };
             return View(model);
         }
