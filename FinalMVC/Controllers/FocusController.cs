@@ -55,8 +55,8 @@ namespace FinalMVC.Controllers
 
         public ActionResult Details(int id)
         {
-            var svc = CreateFocusService();
-            var model = svc.GetFocusById(id);
+            var service = CreateFocusService();
+            var model = service.GetFocusById(id);
 
             return View(model);
         }
@@ -102,8 +102,8 @@ namespace FinalMVC.Controllers
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
-            var svc = CreateFocusService();
-            var model = svc.GetFocusById(id);
+            var service = CreateFocusService();
+            var model = service.GetFocusById(id);
 
             return View(model);
         }

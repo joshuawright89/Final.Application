@@ -250,6 +250,9 @@
     <Content Include="Views\Day\Create.cshtml" />
     <Content Include="Views\Focus\Index.cshtml" />
     <Content Include="Views\Focus\Create.cshtml" />
+    <Content Include="Views\Focus\Details.cshtml" />
+    <Content Include="Views\Focus\Edit.cshtml" />
+    <Content Include="Views\Focus\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
