@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace FinalMVC.Controllers
 {
-    [Authorize]   //"One very nice attribute in C# is the  annotation. This annotation makes it so that the views are accessible only to logged in users:"
+    [Authorize]   
     public class DayController : Controller //"The [Day]Controller will manage views for Creating, Reading, Updating, and Deleting [Days]..."
     {
         // GET: Day

@@ -13,22 +13,25 @@ namespace Final.Services
     public class ToDoService
     {
         private readonly ApplicationDbContext _ctx = new ApplicationDbContext();
-        //private readonly Guid _userId;
-        //public ToDoService(Guid userId)
-        //{
-        //    _userId = userId;
-        //}                                         This is for connecting the a user's identity to any note he creates, not needed, but how do we have each new entity stored with its own incrememented Id???
+        private readonly Guid _userId;
+        public ToDoService(Guid userId)
+        {
+            _userId = userId;
+        }                                         //This is for connecting the a user's identity to any note he creates, not needed, but how do we have each new entity stored with its own incrememented Id???
 
         //Create
-        public bool CreateTask(ToDoCreate model)
+        public bool CreateToDo(ToDoCreate model)
         {
-            ToDo entity = new ToDo
+            ToDo entity = new ToDo()
             {
                 ToDoName = model.TaskName
             };
 
-            _ctx.ToDos.Add(entity);
+            using (var ctx = new ApplicationDbContext())
+            {
+                _ctx.ToDos.Add(entity);
             return _ctx.SaveChanges() == 1;
+            }
         }
 
 
@@ -39,7 +42,8 @@ namespace Final.Services
             var toDoList = toDoEntities.Select(t => new ToDoListItem
             {
                 Id = t.Id,
-                ToDoName = t.ToDoName
+                ToDoName = t.ToDoName,
+                DaysAssignedThisToDO = t.DaysAssignedThisToDo
             }).ToList();
             return toDoList;
         }

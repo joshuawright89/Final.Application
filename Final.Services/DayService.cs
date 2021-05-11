@@ -51,7 +51,6 @@ namespace Final.Services
                 ToDosAssignedForToday = d.ToDosAssignedForToday
             }).ToList();
             return dayList;
-
         }
 
 
