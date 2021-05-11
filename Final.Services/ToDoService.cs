@@ -38,7 +38,7 @@ namespace Final.Services
             var toDoEntities = _ctx.ToDos.ToList();
             var toDoList = toDoEntities.Select(t => new ToDoListItem
             {
-                ToDoId = t.Id,
+                Id = t.Id,
                 ToDoName = t.ToDoName
             }).ToList();
             return toDoList;
@@ -54,7 +54,7 @@ namespace Final.Services
 
             var toDoList = new ToDoListItem
             {
-                ToDoId = toDoEntity.Id,
+                Id = toDoEntity.Id,
                 ToDoName = toDoEntity.ToDoName
             };
             return toDoList;
