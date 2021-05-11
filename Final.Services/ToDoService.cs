@@ -84,5 +84,22 @@ namespace Final.Services
         }
 
 
+        //DELETE
+        public bool DeleteToDo(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .ToDos
+                    .Single(e => e.Id == id);
+
+                ctx.ToDos.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+
     }
 }

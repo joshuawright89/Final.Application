@@ -107,6 +107,20 @@ namespace FinalMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateToDoService();
+
+            service.DeleteToDo(id);
+
+            TempData["SaveResult"] = "Your task was successfully deleted!";
+
+            return RedirectToAction("Index");
+        }
+
 
         private ToDoService CreateToDoService()
         {
