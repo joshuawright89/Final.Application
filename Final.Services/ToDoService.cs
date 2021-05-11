@@ -44,23 +44,24 @@ namespace Final.Services
             {
                 Id = t.Id,
                 ToDoName = t.ToDoName,
-                DaysAssignedThisToDO = t.DaysAssignedThisToDo
+                DaysAssignedThisToDo = t.DaysAssignedThisToDo
             }).ToList();
             return toDoList;
         }
 
 
         //Get (Details by Id)
-        public ToDoListItem GetToDoById(int toDoId)
+        public ToDoDetails GetToDoById(int toDoId)
         {
             var toDoEntity = _ctx.ToDos.Find(toDoId);
             if (toDoEntity == null)
                 return null;
 
-            var toDoList = new ToDoListItem
+            var toDoList = new ToDoDetails
             {
                 Id = toDoEntity.Id,
-                ToDoName = toDoEntity.ToDoName
+                ToDoName = toDoEntity.ToDoName,
+                DaysAssignedThisToDo = toDoEntity.DaysAssignedThisToDo
             };
             return toDoList;
         }

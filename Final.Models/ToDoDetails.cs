@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Final.Models
 {
-    public class ToDoListItem
+    public class ToDoDetails
     {
         [Key]
-        [Display(Name="Id:")]
+        [Display(Name = "Id:")]
         public int Id { get; set; }
 
-        [Display(Name="To-do:")]
+        [Display(Name = "To-do:")]
         public string ToDoName { get; set; }
 
         [Display(Name = "Days assigned this To-Do:")]

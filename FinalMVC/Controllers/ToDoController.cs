@@ -52,6 +52,15 @@ namespace FinalMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateToDoService();
+            var model = svc.GetToDoById(id);
+
+            return View(model);
+        }
+
+
         public ActionResult Edit(int id)
         {
             var service = CreateToDoService();
@@ -60,7 +69,7 @@ namespace FinalMVC.Controllers
                 new ToDoEdit
                 {
                     ToDoName = listItem.ToDoName,
-                    DaysAssignedThisToDo = listItem.DaysAssignedThisToDO
+                    DaysAssignedThisToDo = listItem.DaysAssignedThisToDo
                 };
             return View(model);
         }
@@ -89,6 +98,14 @@ namespace FinalMVC.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateToDoService();
+            var model = svc.GetToDoById(id);
+
+            return View(model);
+        }
 
 
         private ToDoService CreateToDoService()
