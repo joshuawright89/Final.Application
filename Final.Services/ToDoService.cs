@@ -1,6 +1,7 @@
 ﻿using Final.Data.Entities;
 using Final.Models;
 using Final.Models.TaskModels;
+using Final.Models.ToDoModels;
 using FinalMVC.Data;
 using System;
 using System.Collections.Generic;
@@ -64,6 +65,22 @@ namespace Final.Services
             return toDoList;
         }
 
+        //UPDATE
+        public bool UpdateToDo(ToDoEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .ToDos
+                    .Single(e => e.Id == model.Id);
+
+                entity.ToDoName = model.ToDoName;
+                entity.DaysAssignedThisToDo = model.DaysAssignedThisToDo;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
 
     }

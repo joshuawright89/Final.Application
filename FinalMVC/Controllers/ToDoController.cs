@@ -1,5 +1,6 @@
 ﻿using Final.Models;
 using Final.Models.TaskModels;
+using Final.Models.ToDoModels;
 using Final.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -50,6 +51,45 @@ namespace FinalMVC.Controllers
 
             return View(model);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateToDoService();
+            var listItem = service.GetToDoById(id);
+            var model =
+                new ToDoEdit
+                {
+                    ToDoName = listItem.ToDoName,
+                    DaysAssignedThisToDo = listItem.DaysAssignedThisToDO
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ToDoEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.Id != id)
+            {
+                ModelState.AddModelError("", "Id mismatch");
+                return View(model);
+            }
+
+            var service = CreateToDoService();
+
+            if (service.UpdateToDo(model))
+            {
+                TempData["SaveResult"] = "Your note was successfully updated!";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your note could not be updated.");
+            return View(model);
+        }
+
+
 
         private ToDoService CreateToDoService()
         {

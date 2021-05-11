@@ -59,7 +59,8 @@
     <Compile Include="DayModels\DayEdit.cs" />
     <Compile Include="DayModels\DayListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ToDoListItem.cs" />
+    <Compile Include="ToDoModels\ToDoEdit.cs" />
+    <Compile Include="ToDoModels\ToDoListItem.cs" />
     <Compile Include="ToDoModels\ToDoCreate.cs" />
   </ItemGroup>
   <ItemGroup>
